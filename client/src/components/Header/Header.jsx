@@ -1,25 +1,30 @@
+import { Link } from "react-router-dom";
 import "./Header.scss";
 
 function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <a href="/" className="header__link">
-          <img src="#" alt="logo" className="header__img" />
-        </a>
-        <h2 className="header__title">Pickleball Pitch</h2>
+        <Link to="/" className="header__link">
+          <h2 className="header__title">Pickleball Pitch</h2>
+        </Link>
       </div>
       <nav className="nav">
         <ul className="nav__list">
           <li className="nav__item">
-            <a href="http://" className="nav__item-link">
+            <Link to="/courts" className="nav__item-link">
               Find a Court
-            </a>
+            </Link>
           </li>
           <li className="nav__item">
-            <a href="http://" className="nav__item-link">
+            <Link to="/" className="nav__item-link">
               Score Keeper
-            </a>
+            </Link>
+          </li>
+          <li className="nav__item">
+            <Link to="/login" className="nav__item-link">
+              Login
+            </Link>
           </li>
         </ul>
       </nav>

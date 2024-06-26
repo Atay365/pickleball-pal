@@ -1,11 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Loader } from "@googlemaps/js-api-loader";
 import "./Map.scss";
+import Courts from "../Courts/Courts";
 
 const api_key = "AIzaSyBGp-ib05S9Wua9xWD6QYcz3khIWJ4CLPc";
 
 const Map = () => {
+  const [mapData, setMapData] = useState([]);
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const Map = () => {
 
               const map = new window.google.maps.Map(mapRef.current, {
                 center: userCoords,
-                zoom: 12,
+                zoom: 11,
               });
               new window.google.maps.Marker({
                 position: userCoords,
@@ -60,6 +62,8 @@ const Map = () => {
           },
         }
       );
+      setMapData(response.data.results);
+
       console.log(response.data.results);
       if (response.data.status === "OK") {
         return response.data.results;
@@ -97,12 +101,11 @@ const Map = () => {
 
   return (
     <main className="court-map__container">
-      <div
-        className="court-map"
-        ref={mapRef}
-        style={{ height: "60vh", width: "75%" }}
-      >
+      <div className="court-map" ref={mapRef}>
         Loading Pickleball Map...
+      </div>
+      <div className="court-list">
+        <Courts mapData={mapData} />
       </div>
     </main>
   );

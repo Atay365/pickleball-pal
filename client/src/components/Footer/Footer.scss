@@ -1,0 +1,9 @@
+@use "../../partials/variables" as *;
+
+footer {
+  background-color: $secondary-color;
+  min-height: 12vh;
+}
+p {
+  color: black;
+}

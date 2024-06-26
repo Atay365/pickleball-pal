@@ -7,6 +7,8 @@
     padding: 1rem;
     margin-bottom: 0;
     margin-top: 4vh;
+    max-height: 40vh;
+    overflow-y: auto;
   }
 
   &__item {
@@ -21,5 +23,14 @@
     margin-bottom: 8px;
     background-color: $secondary-color;
     position: relative;
+
+    &-header {
+      color: $highlight-color;
+    }
+  }
+  &__info {
+    width: 25vw;
+    text-align: center;
+    font-size: 1rem;
   }
 }

@@ -1,24 +1,25 @@
 import "./Courts.scss";
 
-function Courts() {
+function Courts({ mapData }) {
   return (
     <section className="courts">
       <ul className="courts__list">
         <li className="courts__item courts__item-header">
-          <p>Court Name</p>
-          <p>Address</p>
-          <p>Hours</p>
+          <p className="courts__info">Court Name</p>
+          <p className="courts__info">Address</p>
+          <p className="courts__info">Hours</p>
         </li>
-        <li className="courts__item">
-          <p>CGreystone Pickleball</p>
-          <p>243 Ash Drive, Birmingham AL</p>
-          <p>9AM - 9PM</p>
-        </li>
-        <li className="courts__item">
-          <p>CGreystone Pickleball</p>
-          <p>243 Ash Drive, Birmingham AL</p>
-          <p>9AM - 9PM</p>
-        </li>
+        {mapData.map((map) => (
+          <li className="courts__item" key={map.place_id}>
+            <p className="courts__info">{map.name}</p>
+            <p className="courts__info">{map.vicinity}</p>
+            <p className="courts__info">
+              {map.opening_hours && map.opening_hours.open_now
+                ? "Open Now"
+                : "Closed"}
+            </p>
+          </li>
+        ))}
       </ul>
     </section>
   );
