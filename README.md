@@ -82,6 +82,7 @@ bit of smack on the courts!
 #### Home Page
 
 #### Find a Court
+![Screen Shot 2024-06-25 at 21 56 52 PM](https://github.com/Atay365/pickleball-pal/assets/86385162/d56715ac-9bdd-4680-9cf8-c1667f52205d)
 
 #### Score & Game History
 
