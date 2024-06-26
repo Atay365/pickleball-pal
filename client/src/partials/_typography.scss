@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Syne:wght@400..800&display=swap");
+
+// Body Texts
+@font-face {
+  font-family: Inter;
+  src: url("../assets/fonts/Inter/Inter-Regular.ttf");
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("../assets/fonts/Inter/Inter-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("../assets/fonts/Inter/Inter-Regular.ttf");
+  font-style: italic;
+  font-weight: 100;
+}
+
+// Headers
+@font-face {
+  font-family: Syne;
+  src: url("../assets/fonts/Syne/Syne-Regular.ttf");
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: Syne;
+  src: url("../assets/fonts/Syne/Syne-SemiBold.ttf");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: Syne;
+  src: url("../assets/fonts/Syne/Syne-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+
+// Variables
+$site-main-font: "Inter";
+$site-heading-font: "Syne";
+
+p,
+h6 {
+  font-size: 1rem;
+  font-family: $site-main-font;
+}
+h5 {
+  font-size: 1.5rem;
+  font-family: $site-heading-font;
+}
+h4 {
+  font-size: 1.96rem;
+  font-family: $site-heading-font;
+}
+h3 {
+  font-size: 2.74rem;
+  font-family: $site-heading-font;
+}
+h2 {
+  font-size: 3rem;
+  font-family: $site-heading-font;
+}
+h1 {
+  font-size: 3.875rem;
+  font-family: $site-heading-font;
+}

@@ -1,0 +1,25 @@
+@use "../../partials/typography" as *;
+@use "../../partials/variables" as *;
+
+.courts {
+  background-color: $secondary-color;
+  &__list {
+    padding: 1rem;
+    margin-bottom: 0;
+    margin-top: 4vh;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 4px 11px -5px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    list-style: none;
+    color: $primary-color;
+    margin-bottom: 8px;
+    background-color: $secondary-color;
+    position: relative;
+  }
+}
