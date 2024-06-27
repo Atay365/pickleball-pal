@@ -3,6 +3,7 @@ import axios from "axios";
 import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
+import gameRouter from "./routes/scoring.js";
 
 const app = express();
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(cors({ origin: FRONT_END }));
 app.use(express.json());
 
 app.use("/users", userRoutes);
+app.use("/score", gameRouter);
 
 // * Google Map & Places API - This pulls the nearby location to user. Eliminates the cors errors.
 app.get("/api/nearbysearch", async (req, res) => {
