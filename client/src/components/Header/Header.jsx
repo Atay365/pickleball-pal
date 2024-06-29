@@ -17,7 +17,7 @@ function Header() {
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/" className="nav__item-link">
+            <Link to="/game" className="nav__item-link">
               Score Keeper
             </Link>
           </li>

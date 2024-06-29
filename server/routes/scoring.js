@@ -9,7 +9,9 @@ const gameRouter = express.Router();
 
 // Active Game - Obtain Ending score
 gameRouter.post("/:userID", async (req, res) => {
-  const userId = req.params.id;
+  const userId = req.params.userID;
+  console.log("User ID:", userId); // Log the user ID
+  console.log("Request Body:", req.body); // Log the request body
   const { opponent, score, date, win } = req.body;
   const gameDate = new Date().toISOString().split("T")[0];
 

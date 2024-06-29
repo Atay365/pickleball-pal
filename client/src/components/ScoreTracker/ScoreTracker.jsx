@@ -2,13 +2,13 @@ import "./ScoreTracker.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const API_URL = import.meta.VITE_API_URL;
+// const API_URL = import.meta.VITE_API_URL;
 
-function ScoreTracker({ userId }) {
-  [score, setScore] = useState({ user: 0, opponent: 0 });
-  [opponentName, setOpponentName] = useState("");
-  [win, setWin] = useState(null);
-  [userId, setUserId] = useState("");
+function ScoreTracker({ userID }) {
+  const [score, setScore] = useState({ user: 0, opponent: 0 });
+  const [opponentName, setOpponentName] = useState("");
+  const [win, setWin] = useState(null);
+  const [userId, setUserId] = useState("");
 
   useEffect(() => {
     const grabUserId = sessionStorage.getItem("userID");
@@ -16,6 +16,7 @@ function ScoreTracker({ userId }) {
       setUserId(grabUserId);
     } else {
       alert("Please log in first.");
+      return;
     }
   }, []);
 
@@ -31,8 +32,10 @@ function ScoreTracker({ userId }) {
       alert(
         "Score must be 11 for one of the players in order to submit...Keep playing!"
       );
+      return;
     } else if (!opponentName) {
       alert("Please enter your opponents name or names for the game to submit");
+      return;
     }
 
     const result = {
@@ -40,12 +43,16 @@ function ScoreTracker({ userId }) {
       win: score.user === 11,
       opponent: opponentName,
       score: `${score.user}-${score.opponent}`,
-      date: new Date().toISOString.split("T")[0],
+      date: new Date().toISOString().split("T")[0],
       user_id: userId,
     };
+    console.log(result);
 
     try {
-      const postGame = await axios.post(`${API_URL}/score/${userId}`, result);
+      const postGame = await axios.post(
+        `http://localhost:5050/score/${userId}`,
+        result
+      );
       alert("Game saved successfully!");
 
       //   The below is what is resetting the game
@@ -59,27 +66,47 @@ function ScoreTracker({ userId }) {
 
   return (
     <>
-      <section>
-        <div>
-          <h2>You</h2>
-          <input type="text" name="partner" />
-          <button onClick={() => handleScoring(user, 1)}>{score.user}</button>
+      <section className="score">
+        <div className="score__container">
+          <h2 className="score__team-titles">You</h2>
+          <input
+            type="text"
+            name="partner"
+            className="score__player-input"
+            placeholder="Partner's Name"
+          />
+          <button
+            onClick={() => handleScoring("user", 1)}
+            className="score__button"
+          >
+            {score.user}
+          </button>
         </div>
-        <div>
-          <h2>Opponent</h2>
+        <div className="score__vs">
+          <p className="score__vs-text">VS</p>
+        </div>
+        <div className="score__container">
+          <h2 className="score__team-titles">Opponent</h2>
           <input
             type="text"
             name="opponent"
+            className="score__player-input"
+            placeholder="Opp's Name/s"
             value={opponentName}
             onChange={(e) => setOpponentName(e.target.value)}
           />
-          <button onClick={() => handleScoring(opponent, 1)}>
+          <button
+            onClick={() => handleScoring("opponent", 1)}
+            className="score__button"
+          >
             {score.opponent}
           </button>
         </div>
       </section>
-      <div>
-        <button onSubmit={handleSubmit}>End Match</button>
+      <div className="score__submit">
+        <button onClick={handleSubmit} className="score__submit-button">
+          End Match
+        </button>
       </div>
     </>
   );
