@@ -18,7 +18,10 @@ function Login() {
         password: event.target.password.value,
       });
 
-      sessionStorage.setItem("token", response.data.token);
+      const { user, token } = response.data;
+
+      sessionStorage.setItem("token", token);
+      sessionStorage.setItem("userID", user.id);
 
       navigate("/profile");
     } catch (error) {

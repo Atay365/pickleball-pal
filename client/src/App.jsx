@@ -6,6 +6,7 @@ import Profile from "./pages/Profile/Profile";
 import FindCourt from "./pages/FindCourt/FindCourt";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Score from "./pages/Score/Score";
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/courts" element={<FindCourt />} />
+          <Route path="/game" element={<Score />} />
         </Routes>
         <Footer />
       </BrowserRouter>

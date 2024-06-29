@@ -1,11 +1,23 @@
 import "./ScoreTracker.scss";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const API_URL = import.meta.VITE_API_URL;
 
 function ScoreTracker({ userId }) {
   [score, setScore] = useState({ user: 0, opponent: 0 });
   [opponentName, setOpponentName] = useState("");
   [win, setWin] = useState(null);
+  [userId, setUserId] = useState("");
+
+  useEffect(() => {
+    const grabUserId = sessionStorage.getItem("userID");
+    if (grabUserId) {
+      setUserId(grabUserId);
+    } else {
+      alert("Please log in first.");
+    }
+  }, []);
 
   const handleScoring = (player, increment) => {
     setScore((prevScore) => ({
@@ -29,10 +41,11 @@ function ScoreTracker({ userId }) {
       opponent: opponentName,
       score: `${score.user}-${score.opponent}`,
       date: new Date().toISOString.split("T")[0],
+      user_id: userId,
     };
 
     try {
-      const postGame = await axios.post(`http://localhost:5050/score`, result);
+      const postGame = await axios.post(`${API_URL}/score/${userId}`, result);
       alert("Game saved successfully!");
 
       //   The below is what is resetting the game
