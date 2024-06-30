@@ -33,4 +33,37 @@ gameRouter.post("/:userID", async (req, res) => {
 
 gameRouter.get("/:id", fetchUsersGames);
 
+// Get Total Wins and Rank
+gameRouter.get("/profile/:userId", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    console.log(`Received request with userId: ${userId}`);
+
+    const userWins = await knex("games")
+      .where({ user_id: userId, win: true })
+      .count("* as totalWins")
+      .first();
+    console.log(`User Wins: ${JSON.stringify(userWins)}`);
+
+    const allUsersWins = await knex("games")
+      .where({ win: true })
+      .select("user_id")
+      .count("* as totalWins")
+      .groupBy("user_id")
+      .orderBy("totalWins", "desc");
+    console.log(`All Users Wins: ${JSON.stringify(allUsersWins)}`);
+
+    const normalizedUserId = String(userId);
+    const rank =
+      allUsersWins.findIndex(
+        (user) => String(user.user_id) === normalizedUserId
+      ) + 1;
+
+    res.json({ totalWins: userWins.totalWins, rank });
+  } catch (error) {
+    console.error("Error fetching profile data:", error);
+    res.status(500).json({ error });
+  }
+});
+
 export default gameRouter;
