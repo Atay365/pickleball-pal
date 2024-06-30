@@ -1,0 +1,11 @@
+.share-bar {
+  display: flex;
+  max-width: 15vw;
+
+  &__button {
+  }
+  &__icon {
+    max-height: 2rem;
+    margin-right: -15px;
+  }
+}

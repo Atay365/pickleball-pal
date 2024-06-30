@@ -3,6 +3,7 @@ import axios from "axios";
 import { Loader } from "@googlemaps/js-api-loader";
 import "./Map.scss";
 import Courts from "../Courts/Courts";
+import Loading from "../../components/Loading/Loading";
 
 const api_key = "AIzaSyBGp-ib05S9Wua9xWD6QYcz3khIWJ4CLPc";
 
@@ -102,7 +103,7 @@ const Map = () => {
   return (
     <main className="court-map__container">
       <div className="court-map" ref={mapRef}>
-        Loading Pickleball Map...
+        <Loading />
       </div>
       <div className="court-list">
         <Courts mapData={mapData} />

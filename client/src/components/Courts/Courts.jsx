@@ -9,6 +9,8 @@ function Courts({ mapData }) {
           <p className="courts__info">Address</p>
           <p className="courts__info">Hours</p>
         </li>
+        </ul>
+        <ul className="courts__list courts__list-scrollable">
         {mapData.map((map) => (
           <li className="courts__item" key={map.place_id}>
             <p className="courts__info">{map.name}</p>
@@ -19,6 +21,8 @@ function Courts({ mapData }) {
                 : "Closed"}
             </p>
           </li>
+
+        </ul>
         ))}
       </ul>
     </section>

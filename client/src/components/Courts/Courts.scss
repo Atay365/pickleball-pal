@@ -26,6 +26,9 @@
 
     &-header {
       color: $highlight-color;
+      text-decoration: underline;
+      text-decoration-color: black;
+      position: relative;
     }
   }
   &__info {
