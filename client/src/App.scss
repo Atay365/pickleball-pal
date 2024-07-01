@@ -6,3 +6,17 @@ body {
   background-color: $primary-color;
   padding: 0;
 }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  color: black;
+}
+
+// #root {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   min-height: 100vh;
+// }

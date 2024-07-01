@@ -1,9 +1,16 @@
 @use "../../partials/variables" as *;
 
-footer {
-  background-color: $secondary-color;
-  min-height: 12vh;
-}
-p {
-  color: black;
+.footer {
+  &__container {
+    background-color: $secondary-color;
+    min-height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  &__content {
+    color: black;
+    margin: 0;
+  }
 }

@@ -17,7 +17,7 @@ function Header() {
     <header className="header">
       <div className="header__container">
         <Link to="/" className="header__link">
-          <h2 className="header__title">Pickleball Pitch</h2>
+          <h2 className="header__title">Pickleball Pal</h2>
         </Link>
       </div>
       <nav className={`nav ${isActive ? "nav--active" : ""}`}>

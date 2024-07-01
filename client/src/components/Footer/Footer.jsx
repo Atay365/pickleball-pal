@@ -4,8 +4,10 @@ import SocialShare from "../SocialShare/SocialShare";
 function Footer() {
   return (
     <footer>
-      <p>Footer Goes Here</p>
-      <SocialShare />
+      <div className="footer__container">
+        <p className="footer__content">Footer Goes Here</p>
+        <SocialShare />
+      </div>
     </footer>
   );
 }
