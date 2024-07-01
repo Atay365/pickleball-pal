@@ -37,7 +37,6 @@ gameRouter.get("/:id", fetchUsersGames);
 gameRouter.get("/profile/:userId", async (req, res) => {
   try {
     const userId = req.params.userId;
-    console.log(`Received request with userId: ${userId}`);
 
     const userWins = await knex("games")
       .where({ user_id: userId, win: true })
@@ -63,6 +62,21 @@ gameRouter.get("/profile/:userId", async (req, res) => {
   } catch (error) {
     console.error("Error fetching profile data:", error);
     res.status(500).json({ error });
+  }
+});
+
+// Route for charting with chart js
+gameRouter.get("/history/:userId", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const games = await knex("games")
+      .where({ user_id: userId })
+      .orderBy("date", "asc");
+    res.json(games);
+  } catch (error) {
+    console.error("Error fetching game history", error);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 

@@ -6,6 +6,7 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 2rem;
+  height: 35vh;
   &__container {
     display: flex;
     flex-direction: column;
@@ -16,7 +17,7 @@
     margin-bottom: 8px;
   }
   &__button {
-    height: 15vh;
+    height: 18vh;
     width: 40vw;
     border-radius: 15px;
     border: 0px solid;

@@ -22,7 +22,6 @@ function Courts({ mapData }) {
             </p>
           </li>
         ))}
-        ;
       </ul>
     </section>
   );

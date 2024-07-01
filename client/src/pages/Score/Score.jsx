@@ -22,8 +22,10 @@ const Score = () => {
 
   return (
     <>
-      <ScoreTracker userId={userID} />
-      <GameHistory gameHistory={gameHistory} />
+      <main>
+        <ScoreTracker userId={userID} />
+        <GameHistory gameHistory={gameHistory} />
+      </main>
     </>
   );
 };

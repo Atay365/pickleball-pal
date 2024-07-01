@@ -28,13 +28,28 @@
 .nav {
   display: flex;
   align-items: center;
+  position: fixed;
+  left: -100%;
+  top: 70px;
+  gap: 0;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
+  background-color: $secondary-color;
+
+  &--active {
+    left: 0;
+  }
 
   &__list {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 60vw;
+    width: 100vw;
     list-style-type: none;
+    margin: 16px 0;
+    padding-left: 0;
   }
 
   &__item-link {
@@ -42,4 +57,31 @@
     color: black;
     font-size: 0.8rem;
   }
+}
+
+.hamburger {
+  cursor: pointer;
+  display: block;
+  padding-top: 1rem;
+  padding-right: 1rem;
+
+  &.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  &.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  &.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
 }
