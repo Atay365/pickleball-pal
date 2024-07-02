@@ -4,6 +4,8 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 function Signup() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -12,7 +14,7 @@ function Signup() {
     event.preventDefault();
     const timestamp = new Date().toISOString();
     try {
-      await axios.post("http://localhost:5050/users/register", {
+      await axios.post(`${baseURL}/users/register`, {
         email: event.target.email.value,
         password: event.target.password.value,
         first_name: event.target.first_name.value,

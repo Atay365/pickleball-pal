@@ -11,6 +11,8 @@ import rank5 from "../../assets/icons/Rank5.svg";
 import rank6 from "../../assets/icons/Rank6.svg";
 import ProfileHistoryChart from "../../components/ProfileHistoryChart/ProfileHistoryChart";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 function Profile() {
   const [user, setUser] = useState(null);
   const [failedAuth, setFailedAuth] = useState(false);
@@ -30,14 +32,11 @@ function Profile() {
 
       try {
         // Get the data from the API
-        const { data } = await axios.get(
-          "http://localhost:5050/users/profile",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const { data } = await axios.get(`${baseURL}/users/profile`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         // console.log(data);
         setUser(data);
       } catch (error) {
@@ -55,14 +54,14 @@ function Profile() {
 
         if (userId) {
           const response = await axios.get(
-            `http://localhost:5050/score/profile/${userId}`
+            `${baseURL}/score/profile/${userId}`
           );
           // console.log(response.data);
           setTotalWins(response.data.totalWins);
           setUserRank(response.data.rank);
 
           const gameHistoryResponse = await axios.get(
-            `http://localhost:5050/score/history/${userId}`
+            `${baseURL}/score/history/${userId}`
           );
           setGameHistory(gameHistoryResponse.data);
         } else {

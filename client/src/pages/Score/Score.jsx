@@ -3,6 +3,8 @@ import ScoreTracker from "../../components/ScoreTracker/ScoreTracker";
 import { useEffect, useState } from "react";
 import GameHistory from "../../components/GameHistory/GameHistory";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 const userID = sessionStorage.getItem("userID");
 
 const Score = () => {
@@ -10,7 +12,7 @@ const Score = () => {
   const [fetchTrigger, setFetchTrigger] = useState(false);
 
   const fetchGames = async () => {
-    const response = await axios.get(`http://localhost:5050/score/${userID}`);
+    const response = await axios.get(`${baseURL}/score/${userID}`);
     setGameHistory(response.data);
     // console.log(response.data);
     // console.log(userID);

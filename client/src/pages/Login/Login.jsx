@@ -3,7 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import "./Login.scss";
-import Footer from "../../components/Footer/Footer.jsx";
+
+const baseURL = import.meta.env.VITE_API_URL;
 
 function Login() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5050/users/login", {
+      const response = await axios.post(`${baseURL}/users/login`, {
         email: event.target.email.value,
         password: event.target.password.value,
       });

@@ -6,6 +6,7 @@ import Courts from "../Courts/Courts";
 import Loading from "../../components/Loading/Loading";
 
 const api_key = "AIzaSyBGp-ib05S9Wua9xWD6QYcz3khIWJ4CLPc";
+const baseURL = import.meta.env.VITE_API_URL;
 
 const Map = () => {
   const [mapData, setMapData] = useState([]);
@@ -53,16 +54,13 @@ const Map = () => {
     // ! Section below not working due to Cors, need backend server
 
     const fetchPickleballCourts = async (userCoords) => {
-      const response = await axios.get(
-        "http://localhost:5050/api/nearbysearch",
-        {
-          params: {
-            location: `${userCoords.lat}, ${userCoords.lng}`,
-            radius: "10000",
-            keyword: "pickleball court",
-          },
-        }
-      );
+      const response = await axios.get(`${baseURL}/api/nearbysearch`, {
+        params: {
+          location: `${userCoords.lat}, ${userCoords.lng}`,
+          radius: "10000",
+          keyword: "pickleball court",
+        },
+      });
       setMapData(response.data.results);
 
       console.log(response.data.results);

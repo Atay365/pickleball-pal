@@ -2,7 +2,7 @@ import "./ScoreTracker.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-// const API_URL = import.meta.VITE_API_URL;
+const baseURL = import.meta.env.VITE_API_URL;
 
 function ScoreTracker({ userID, onGameSubmission }) {
   const [score, setScore] = useState({ user: 0, opponent: 0 });
@@ -49,10 +49,7 @@ function ScoreTracker({ userID, onGameSubmission }) {
     // console.log(result);
 
     try {
-      const postGame = await axios.post(
-        `http://localhost:5050/score/${userId}`,
-        result
-      );
+      const postGame = await axios.post(`${baseURL}/score/${userId}`, result);
       alert("Game saved successfully!");
 
       //   The below is what is resetting the game
