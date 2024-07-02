@@ -31,6 +31,7 @@ gameRouter.post("/:userID", async (req, res) => {
   }
 });
 
+// Had to get rid of the controller, was causing the page to render before getting newest data.
 gameRouter.get("/:id", async (req, res) => {
   const userId = req.params.id;
   try {

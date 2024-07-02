@@ -46,7 +46,7 @@ function ScoreTracker({ userID, onGameSubmission }) {
       date: new Date().toISOString().split("T")[0],
       user_id: userId,
     };
-    console.log(result);
+    // console.log(result);
 
     try {
       const postGame = await axios.post(

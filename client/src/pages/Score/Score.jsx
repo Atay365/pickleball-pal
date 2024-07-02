@@ -12,12 +12,12 @@ const Score = () => {
   const fetchGames = async () => {
     const response = await axios.get(`http://localhost:5050/score/${userID}`);
     setGameHistory(response.data);
-    console.log(response.data);
-    console.log(userID);
+    // console.log(response.data);
+    // console.log(userID);
   };
 
   useEffect(() => {
-    console.log("useEffect triggered");
+    // console.log("useEffect triggered");
     fetchGames();
   }, [fetchTrigger]);
 
@@ -26,7 +26,7 @@ const Score = () => {
     setFetchTrigger(!fetchTrigger);
   };
 
-  console.log(gameHistory);
+  // console.log(gameHistory);
 
   return (
     <>
