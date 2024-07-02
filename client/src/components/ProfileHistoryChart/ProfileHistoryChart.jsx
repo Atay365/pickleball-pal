@@ -20,11 +20,24 @@ ChartJS.register(
 );
 
 const ProfileHistoryChart = ({ gameHistory }) => {
-  const labels = gameHistory.map((game) =>
-    new Date(game.date).toLocaleDateString()
-  );
-  const wins = gameHistory.map((game) => (game.win ? 1 : 0));
-  const losses = gameHistory.map((game) => (game.win ? 0 : 1));
+  const gamesByDate = gameHistory.reduce((acc, game) => {
+    // Below had to be reworked to combine the timestamps into dates to show all that matched date
+    //  If not it shows each entry as a new bar because its still reading the times.
+    const date = new Date(game.date).toLocaleDateString();
+    if (!acc[date]) {
+      acc[date] = { wins: 0, losses: 0 };
+    }
+    if (game.win) {
+      acc[date].wins += 1;
+    } else {
+      acc[date].losses += 1;
+    }
+    return acc;
+  }, {});
+
+  const labels = Object.keys(gamesByDate);
+  const wins = labels.map((date) => gamesByDate[date].wins);
+  const losses = labels.map((date) => gamesByDate[date].losses);
 
   const data = {
     labels,

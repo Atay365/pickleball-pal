@@ -85,9 +85,11 @@ function Profile() {
   if (failedAuth) {
     return (
       <main className="Profile">
-        <p>You must be logged in to see this page.</p>
-        <p>
-          <Link to="/login">Log in</Link>
+        <h2>You must be logged in to see this page.</h2>
+        <p className="Profile__button">
+          <Link to="/login">
+            <button className="Profile__button">Log in</button>
+          </Link>
         </p>
       </main>
     );
