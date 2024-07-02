@@ -43,10 +43,10 @@ bit of smack on the courts!
 - As a logged-in user, I want to be able to log out of my account securely.
 - As a logged-in user, I want to be able to delete any match records that I no
   longer want to keep.
-- Diving Deeper - Ability to see all users ranked or see the ranking inside your
-  group. Allows families and friends to make groups to compete.
-- Diving Deeper - Award system. Create awards for accomplishments and also funny
-  awards for those that are not doing the best.
+- Ability to see all users ranked or see the ranking inside your group. Allows
+  families and friends to make groups to compete.
+- Award system. Create awards for accomplishments and also funny awards for
+  those that are not doing the best.
 
 ## Implementation
 
@@ -60,6 +60,8 @@ bit of smack on the courts!
   - react-router
   - react
   - sass
+  - chart.js
+  - react-share
 - Server Libraries:
   - express
   - knex.js
@@ -70,6 +72,7 @@ bit of smack on the courts!
 - Google Maps & Places API (https://mapsplatform.google.com/maps-products/ )
 
 ### SQL Structure
+
 ![Pickleball Pal SQL structure](https://github.com/Atay365/pickleball-pal/assets/86385162/fdf5e1c2-3bf4-4c81-bdca-c943615f0107)
 
 ### Sitemap
@@ -79,24 +82,30 @@ bit of smack on the courts!
 - Score & Game History
 - Register
 - Login
+- Profile
 
 ### Mockups
 
 #### Home Page
 
 #### Find a Court
+
 ![Screen Shot 2024-06-25 at 21 56 52 PM](https://github.com/Atay365/pickleball-pal/assets/86385162/d56715ac-9bdd-4680-9cf8-c1667f52205d)
 
 #### Score & Game History
+
 ![Screen Shot 2024-06-25 at 21 56 57 PM](https://github.com/Atay365/pickleball-pal/assets/86385162/717a4f6f-b708-48e1-92ec-1faa5f8a9a83)
 
 #### Register
+
 ![Screen Shot 2024-06-25 at 21 57 03 PM](https://github.com/Atay365/pickleball-pal/assets/86385162/8198f220-0c28-4bec-8652-c3c9e3629642)
 
 #### Login
+
 ![Screen Shot 2024-06-25 at 21 57 10 PM](https://github.com/Atay365/pickleball-pal/assets/86385162/3a7b43b3-194b-453f-a1e6-15bffabb980e)
 
 #### Profile
+
 ![Screen Shot 2024-06-25 at 21 57 16 PM](https://github.com/Atay365/pickleball-pal/assets/86385162/df632744-65d3-4924-a340-e26ef4226cfd)
 
 ### Auth
