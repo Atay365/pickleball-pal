@@ -1,3 +1,5 @@
+@use "../../partials/variables" as *;
+
 .profile {
   background-color: #f5f5f5;
   padding: 1rem;
@@ -25,6 +27,15 @@
   &__header {
     display: flex;
     justify-content: space-between;
+  }
+  &__logout {
+    background-color: $primary-color;
+    border: 0px;
+    border-radius: 8px;
+    height: 2rem;
+    width: 6rem;
+    color: white;
+    margin-top: 3rem;
   }
 }
 

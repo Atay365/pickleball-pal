@@ -43,8 +43,9 @@ function Home() {
         </div>
         <div className="features features---col">
           <p className="features__content">
-            Keep track of all your matches with our game score tracker. Log
-            every win, improve your game, and never forget a match!
+            Climb the ranks and earn badges as you play! See where you stand
+            among other players and celebrate your total wins with achievement
+            badges.
           </p>
           <img
             src={ranks}

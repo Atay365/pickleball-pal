@@ -31,7 +31,19 @@ gameRouter.post("/:userID", async (req, res) => {
   }
 });
 
-gameRouter.get("/:id", fetchUsersGames);
+gameRouter.get("/:id", async (req, res) => {
+  const userId = req.params.id;
+  try {
+    const games = await knex("games")
+      .where({ user_id: userId })
+      .orderBy("date", "desc");
+    console.log("Fetched games:", games);
+    res.json(games);
+  } catch (error) {
+    console.error("Error fetching games:", error);
+    res.status(500).json({ error: "Error fetching games" });
+  }
+});
 
 // Get Total Wins and Rank
 gameRouter.get("/profile/:userId", async (req, res) => {

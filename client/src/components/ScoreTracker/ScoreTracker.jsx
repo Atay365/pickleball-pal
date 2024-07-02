@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 // const API_URL = import.meta.VITE_API_URL;
 
-function ScoreTracker({ userID }) {
+function ScoreTracker({ userID, onGameSubmission }) {
   const [score, setScore] = useState({ user: 0, opponent: 0 });
   const [opponentName, setOpponentName] = useState("");
   const [win, setWin] = useState(null);
@@ -59,6 +59,7 @@ function ScoreTracker({ userID }) {
       setScore({ user: 0, opponent: 0 });
       setOpponentName("");
       setWin(null);
+      onGameSubmission();
     } catch (error) {
       console.log("Failed to save the game:", error);
     }

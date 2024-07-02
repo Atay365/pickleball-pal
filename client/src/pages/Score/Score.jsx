@@ -7,6 +7,8 @@ const userID = sessionStorage.getItem("userID");
 
 const Score = () => {
   const [gameHistory, setGameHistory] = useState([]);
+  const [fetchTrigger, setFetchTrigger] = useState(false);
+
   const fetchGames = async () => {
     const response = await axios.get(`http://localhost:5050/score/${userID}`);
     setGameHistory(response.data);
@@ -15,15 +17,21 @@ const Score = () => {
   };
 
   useEffect(() => {
+    console.log("useEffect triggered");
     fetchGames();
-  }, []);
+  }, [fetchTrigger]);
+
+  const handleGameSub = () => {
+    console.log("game submitted and updating the fetch trigger");
+    setFetchTrigger(!fetchTrigger);
+  };
 
   console.log(gameHistory);
 
   return (
     <>
       <main>
-        <ScoreTracker userId={userID} />
+        <ScoreTracker userId={userID} onGameSubmission={handleGameSub} />
         <GameHistory gameHistory={gameHistory} />
       </main>
     </>
