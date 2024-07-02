@@ -78,7 +78,7 @@ const Map = () => {
         position: place.geometry.location,
         title: place.name,
         icon: {
-          url: { mapMarker },
+          url: iconBase + { mapMarker },
         },
       });
 
