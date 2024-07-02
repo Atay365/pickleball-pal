@@ -54,7 +54,7 @@ const Map = () => {
     // ! Section below not working due to Cors, need backend server
 
     const fetchPickleballCourts = async (userCoords) => {
-      const response = await axios.get(`${baseURL}api/nearbysearch`, {
+      const response = await axios.get(`${baseURL}/api/nearbysearch`, {
         params: {
           location: `${userCoords.lat}, ${userCoords.lng}`,
           radius: "10000",
