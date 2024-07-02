@@ -4,6 +4,7 @@ import { Loader } from "@googlemaps/js-api-loader";
 import "./Map.scss";
 import Courts from "../Courts/Courts";
 import Loading from "../../components/Loading/Loading";
+import mapMarker from "../../assets/icons/pickleball-map-marker.png";
 
 const api_key = "AIzaSyBGp-ib05S9Wua9xWD6QYcz3khIWJ4CLPc";
 const baseURL = import.meta.env.VITE_API_URL;
@@ -77,7 +78,7 @@ const Map = () => {
         position: place.geometry.location,
         title: place.name,
         icon: {
-          url: "src/assets/icons/pickleball-map-marker.png",
+          url: { mapMarker },
         },
       });
 
