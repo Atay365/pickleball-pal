@@ -1,5 +1,6 @@
 import "./ScoreTracker.scss";
 import axios from "axios";
+import Loading from "../Loading/Loading";
 import { useEffect, useState } from "react";
 
 const baseURL = import.meta.env.VITE_API_URL;
@@ -7,13 +8,14 @@ const baseURL = import.meta.env.VITE_API_URL;
 function ScoreTracker({ userID, onGameSubmission }) {
   const [score, setScore] = useState({ user: 0, opponent: 0 });
   const [opponentName, setOpponentName] = useState("");
-  const [win, setWin] = useState(null);
+  const [loading, setLocading] = useState(true);
   const [userId, setUserId] = useState("");
 
   useEffect(() => {
     const grabUserId = sessionStorage.getItem("userID");
     if (grabUserId) {
       setUserId(grabUserId);
+      setLocading(false);
     } else {
       alert("Please log in first.");
       return;
@@ -61,6 +63,10 @@ function ScoreTracker({ userID, onGameSubmission }) {
       console.log("Failed to save the game:", error);
     }
   };
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>

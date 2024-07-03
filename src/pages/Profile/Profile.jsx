@@ -22,6 +22,7 @@ function Profile() {
 
   useEffect(() => {
     const loadData = async () => {
+      //  !Change to local storage
       const token = sessionStorage.getItem("token");
 
       if (!token) {

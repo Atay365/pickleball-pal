@@ -24,6 +24,7 @@ function Login() {
       const token = response.data.token;
       const userId = response.data.user;
 
+      // ! Move to local storage
       sessionStorage.setItem("token", token);
       sessionStorage.setItem("userID", userId);
 
