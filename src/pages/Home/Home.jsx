@@ -45,7 +45,7 @@ function Home() {
           <p className="features__content">
             Climb the ranks and earn badges as you play! See where you stand
             among other players and celebrate your total wins with achievement
-            badges.
+            badges. The more you win the higher you presetige!
           </p>
           <img
             src={ranks}
