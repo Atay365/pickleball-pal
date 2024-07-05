@@ -56,7 +56,6 @@ function ScoreTracker({ userID, onGameSubmission }) {
       //   The below is what is resetting the game
       setScore({ user: 0, opponent: 0 });
       setOpponentName("");
-      setWin(null);
       onGameSubmission();
     } catch (error) {
       console.log("Failed to save the game:", error);
