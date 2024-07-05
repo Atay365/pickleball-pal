@@ -6,3 +6,20 @@ $highlight-color: #f1e4c3;
 
 // Text Color
 $text-color-prim: black;
+
+// Screen Breakpoints
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// Breakpoints
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}

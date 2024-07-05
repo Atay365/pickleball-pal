@@ -16,6 +16,10 @@
     font-size: 2rem;
     text-align: center;
     margin-bottom: 8px;
+
+    @include tablet {
+      font-size: 3rem;
+    }
   }
   &__button {
     height: 18vh;
@@ -24,12 +28,29 @@
     border: 0px solid;
     margin-top: 1rem;
     font-size: 5rem;
+
+    &:active {
+      background-color: $highlight-color;
+    }
+    &:not(:active) {
+      transition: background-color 1500ms ease-in-out;
+    }
+
+    @include tablet {
+      height: 22vh;
+      font-size: 7rem;
+    }
   }
   &__player-input {
     width: 40vw;
     height: 2rem;
     border: 0px;
     border-radius: 8px;
+
+    @include tablet {
+      height: 3rem;
+      font-size: 1.2rem;
+    }
   }
   &__submit {
     display: flex;
@@ -41,6 +62,11 @@
     width: 40vw;
     border: 0px;
     border-radius: 8px;
+
+    @include tablet {
+      height: 3rem;
+      font-size: 1.2rem;
+    }
   }
   &__vs {
     display: flex;
@@ -50,5 +76,9 @@
   &__vs-text {
     font-size: 1.5rem;
     margin-top: 9rem;
+
+    @include tablet {
+      font-size: 2.5rem;
+    }
   }
 }

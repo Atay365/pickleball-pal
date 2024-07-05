@@ -1,8 +1,15 @@
+@use "../../partials/variables" as *;
+
 .share-bar {
   display: flex;
 
   &__icon {
     max-height: 2rem;
     margin-right: -15px;
+
+    @include tablet {
+      max-height: 3rem;
+      margin-right: 0.5rem;
+    }
   }
 }

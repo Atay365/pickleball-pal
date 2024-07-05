@@ -15,5 +15,9 @@
   &__content {
     color: black;
     margin: 0;
+
+    @include tablet {
+      font-size: 1rem;
+    }
   }
 }

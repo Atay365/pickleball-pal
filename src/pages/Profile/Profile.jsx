@@ -114,12 +114,12 @@ function Profile() {
         />
       </div>
 
-      <p>
+      <p className="profile__content">
         Welcome back, {user.first_name} {user.last_name}
       </p>
 
       <h2 className="profile__subtitle">My Info</h2>
-      <p>Email: {user.email}</p>
+      <p className="profile__content">Email: {user.email}</p>
       <section className="achievements__container">
         <div className="achievements">
           <p className="achievements__info-title">Current Rank</p>{" "}

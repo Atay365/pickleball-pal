@@ -3,7 +3,11 @@
 .hero-wrap {
   overflow: hidden;
   position: relative;
-  height: 30vh;
+  height: 29vh;
+
+  @include tablet {
+    height: 40vh;
+  }
 }
 
 .hero {
@@ -24,6 +28,10 @@
   &__cta {
     color: white;
     font-size: 1.5rem;
+
+    @include tablet {
+      font-size: 2.5rem;
+    }
   }
   &__desc {
     color: white;
@@ -33,12 +41,22 @@
     border: 0px;
     border-radius: 4px;
     height: 2rem;
+
+    @include tablet {
+      height: 3rem;
+      width: 10rem;
+      font-size: 1rem;
+    }
   }
 }
 
 .features {
   &__img {
     height: 220px;
+
+    @include tablet {
+      height: 300px;
+    }
 
     &--ranks {
       height: auto;
@@ -53,12 +71,20 @@
     justify-content: center;
     align-items: center;
     background-color: $secondary-color;
+
+    @include tablet {
+      height: 25vh;
+    }
   }
   &---right {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+
+    @include tablet {
+      height: 25vh;
+    }
   }
   &---col {
     display: flex;
@@ -66,6 +92,10 @@
     justify-content: center;
     align-items: center;
     background-color: $secondary-color;
+
+    @include tablet {
+      height: 25vh;
+    }
   }
 
   &__content {
@@ -73,6 +103,12 @@
     padding: 1rem;
     margin-bottom: 0;
     color: black;
+
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      height: auto;
+    }
     &--white {
       color: white;
     }

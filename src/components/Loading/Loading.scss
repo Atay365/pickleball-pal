@@ -1,10 +1,14 @@
+@use "../../partials/variables" as *;
+@use "../../partials/typography" as *;
+
 body {
-  font-family: sans-serif;
+  font-family: $site-heading-font;
 }
 .loader {
   position: relative;
   color: rgba(0, 0, 0, 0.3);
   font-size: 3em;
+
   &:before {
     content: attr(data-text);
     position: absolute;
