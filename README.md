@@ -32,8 +32,6 @@ bit of smack on the courts!
   during a match. Need to be able to toggle a 2 person game vs. 4 person game
 - As a user, I want to be able to view a history of all my matches, with scores
   saved after each game.
-- As a user, I want to be able to filter the game history by date, opponents,
-  win or loss.
 - As a user, I want to be able to create an account to manage my match history
   and scores.
 - As a user, I want to be able to log in to my account to manage my match
@@ -43,10 +41,13 @@ bit of smack on the courts!
 - As a logged-in user, I want to be able to log out of my account securely.
 - As a logged-in user, I want to be able to delete any match records that I no
   longer want to keep.
-- Ability to see all users ranked or see the ranking inside your group. Allows
-  families and friends to make groups to compete.
 - Award system. Create awards for accomplishments and also funny awards for
   those that are not doing the best.
+- Future Features:
+  - Ability to see all users ranked or see the ranking inside your group. Allows
+  families and friends to make groups to compete.
+  - As a user, I want to be able to filter the game history by date, opponents,
+  win or loss.
 
 ## Implementation
 
@@ -65,7 +66,9 @@ bit of smack on the courts!
 - Server Libraries:
   - express
   - knex.js
-  - passport
+  - axios
+  - json web token
+  - dotenv
 
 ### APIs
 
