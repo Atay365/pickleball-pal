@@ -46,6 +46,7 @@
     height: 2rem;
     border: 0px;
     border-radius: 8px;
+    color: black;
 
     @include tablet {
       height: 3rem;
@@ -62,6 +63,7 @@
     width: 40vw;
     border: 0px;
     border-radius: 8px;
+    color: black;
 
     @include tablet {
       height: 3rem;
