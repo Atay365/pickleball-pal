@@ -29,7 +29,9 @@
     margin-top: 1rem;
     font-size: 5rem;
     color: black;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:active {
       background-color: $highlight-color;
@@ -41,6 +43,7 @@
     @include tablet {
       height: 22vh;
       font-size: 7rem;
+      margin-top: 1rem;
     }
   }
   &__player-input {
