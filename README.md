@@ -190,3 +190,16 @@ Task:
   - Test all functionality
   - Fix bugs found
   - Deploy the app
+ 
+
+
+## How to Run
+#### Locally:
+- Download the Pickleball-pal and pickleball-pal-backend files and create the .env files based off the .env.sample files. 
+- In order for pickleball pal courts page to work, accept location services pop up
+- In order to use the other feature an account must be created. 
+
+#### Deployed Version:
+- Follow https://pickleball-pal.netlify.app/
+- In order for pickleball pal courts page to work, accept location services pop up
+- In order to use the other feature an account must be created. 
