@@ -8,6 +8,10 @@
   margin-bottom: 2rem;
   height: 35vh;
 
+  @include desktop {
+    height: auto;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -19,6 +23,9 @@
 
     @include tablet {
       font-size: 3rem;
+    }
+    @include desktop {
+      margin-top: 0;
     }
   }
   &__button {
@@ -32,6 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     &:active {
       background-color: $highlight-color;
@@ -45,6 +53,10 @@
       font-size: 7rem;
       margin-top: 1rem;
     }
+    @include desktop {
+      height: 30vh;
+      width: 30vw;
+    }
   }
   &__player-input {
     width: 40vw;
@@ -56,6 +68,9 @@
     @include tablet {
       height: 3rem;
       font-size: 1.2rem;
+    }
+    @include desktop {
+      width: 30vw;
     }
   }
   &__submit {
@@ -69,10 +84,20 @@
     border: 0px;
     border-radius: 8px;
     color: black;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $accent-color;
+      color: white;
+      transition: 0.5s;
+    }
 
     @include tablet {
       height: 3rem;
       font-size: 1.2rem;
+    }
+    @include desktop {
+      margin-top: 2rem;
     }
   }
   &__vs {

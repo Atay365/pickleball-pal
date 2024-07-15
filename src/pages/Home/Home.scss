@@ -54,6 +54,7 @@
     border: 0px;
     border-radius: 4px;
     height: 2rem;
+    cursor: pointer;
 
     @include tablet {
       height: 3rem;
@@ -154,6 +155,33 @@
     }
     &--white {
       color: white;
+    }
+  }
+
+  &__button {
+    background-color: $accent-color;
+    border: 0px;
+    border-radius: 4px;
+    height: 2rem;
+    cursor: pointer;
+
+    @include tablet {
+      height: 3rem;
+      width: 10rem;
+      font-size: 1rem;
+    }
+    @include desktop {
+      width: 15rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__link {
+    padding: 1rem;
+
+    @include desktop {
+      padding-left: 5rem;
+      padding-right: 5rem;
     }
   }
 }

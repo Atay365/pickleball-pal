@@ -45,9 +45,20 @@
     color: white;
     margin-top: 3rem;
 
+    &--wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     @include tablet {
       height: 3rem;
       width: 12rem;
+    }
+    @include desktop {
+      height: 3.5rem;
+      width: 14rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -70,6 +81,9 @@
   @include tablet {
     width: 22vw;
     height: 20vh;
+  }
+  @include desktop {
+    height: 17vh;
   }
 
   &__container {
@@ -103,6 +117,9 @@
     margin: 1rem auto;
     text-align: center;
     padding-top: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @include tablet {
       height: 25vh;

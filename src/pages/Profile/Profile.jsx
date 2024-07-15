@@ -153,6 +153,8 @@ function Profile() {
       </section>
       <div className="achievements achievements--history">
         <ProfileHistoryChart gameHistory={gameHistory} className="chart" />
+      </div>
+      <div className="profile__logout--wrapper">
         <button className="profile__logout" onClick={handleLogout}>
           Log out
         </button>

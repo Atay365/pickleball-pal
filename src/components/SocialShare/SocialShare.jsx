@@ -16,7 +16,7 @@ function SocialShare() {
         {/* Come back and change this to siteUrl once hosted */}
         <EmailShareButton
           className="share-bar__button"
-          url="https://usapickleball.org/"
+          url="https://pickleball-pal.netlify.app/"
           subject="🏓 Challenge Accepted? Join Me on Pickleball Tracker! 🏓"
           body="Hey there,
 
@@ -28,14 +28,14 @@ function SocialShare() {
         </EmailShareButton>
         <FacebookShareButton
           className="share-bar__button"
-          url="https://usapickleball.org/"
+          url="https://pickleball-pal.netlify.app/"
           hashtag="PickleballPal"
         >
           <FacebookIcon round={true} className="share-bar__icon" />
         </FacebookShareButton>
         <TwitterShareButton
           className="share-bar__button"
-          url="https://usapickleball.org/"
+          url="https://pickleball-pal.netlify.app/"
           title="Register on Pickleball Pal"
         >
           <TwitterIcon round={true} className="share-bar__icon" />
