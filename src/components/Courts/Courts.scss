@@ -29,6 +29,10 @@
     background-color: $secondary-color;
     position: relative;
 
+    &:hover {
+      background-color: $accent-color;
+    }
+
     &-header {
       color: $highlight-color;
       text-decoration: underline;
