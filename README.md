@@ -1,4 +1,5 @@
 # Pickleball Pal
+Link: https://pickleball-pal.netlify.app/
 
 ## Overview
 
@@ -7,7 +8,7 @@ matches.
 
 ### Problem
 
-Pickleball Finder and Scorekeeper is a web application designed for pickleball
+Pickleball Pal and Scorekeeper is a web application designed for pickleball
 enthusiasts. The application allows users to find nearby pickleball courts using
 their current location and provides a convenient way to keep score during
 matches. Users can log in, enter their opponents' names, keep track of scores in
