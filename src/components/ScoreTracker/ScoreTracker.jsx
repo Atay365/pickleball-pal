@@ -41,7 +41,7 @@ function ScoreTracker({ userID, onGameSubmission }) {
 
     const result = {
       //   user_id: userId, // Will have to come back to this one. Hopefully I can pass as prop
-      win: score.user === 11,
+      win: score.user > score.opponent,
       opponent: opponentName,
       score: `${score.user}-${score.opponent}`,
       date: new Date().toISOString().split("T")[0],
