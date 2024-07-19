@@ -7,6 +7,7 @@ import Loading from "../../components/Loading/Loading";
 import mapMarker from "../../assets/icons/pickleball-map-marker.png";
 
 const baseURL = import.meta.env.VITE_API_URL;
+const baseAPI = import.meta.env.VITE_GOOGLE_API_KEY;
 
 const Map = () => {
   const [mapData, setMapData] = useState([]);
@@ -15,7 +16,7 @@ const Map = () => {
   useEffect(() => {
     const renderMap = async () => {
       const loader = new Loader({
-        apiKey: api_key,
+        apiKey: baseAPI,
         version: "weekly",
         libraries: ["places"],
       });
