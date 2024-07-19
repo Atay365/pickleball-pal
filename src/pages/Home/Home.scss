@@ -9,7 +9,7 @@
     height: 40vh;
   }
   @include desktop {
-    height: 60vh;
+    height: 100vh;
   }
 }
 
@@ -22,6 +22,9 @@
     width: 100%;
     height: auto;
 
+    @include tablet {
+      height: 100%;
+    }
     @include desktop {
       height: 100%;
     }
