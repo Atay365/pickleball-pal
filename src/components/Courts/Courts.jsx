@@ -3,23 +3,22 @@ import "./Courts.scss";
 function Courts({ mapData }) {
   return (
     <section className="courts">
-      <ul className="courts__list">
-        <li className="courts__item courts__item-header">
-          <p className="courts__info">Court Name</p>
-          <p className="courts__info">Address</p>
-          <p className="courts__info">Hours</p>
-        </li>
-      </ul>
       <ul className="courts__list courts__list--second">
         {mapData.map((map) => (
           <li className="courts__item" key={map.place_id}>
-            <p className="courts__info">{map.name}</p>
-            <p className="courts__info">{map.vicinity}</p>
-            <p className="courts__info">
-              {map.opening_hours && map.opening_hours.open_now
-                ? "Open Now"
-                : "Closed"}
-            </p>
+            <div className="courts__info-wrapper-1">
+              <p className="courts__info courts__info--name">{map.name}</p>
+              <p className="courts__info courts__info--address">
+                {map.vicinity}
+              </p>
+            </div>
+            <div className="courts__info-wrapper-2">
+              {map.opening_hours && map.opening_hours.open_now ? (
+                <p className="open">Open</p>
+              ) : (
+                <p className="closed">Closed</p>
+              )}
+            </div>
           </li>
         ))}
       </ul>

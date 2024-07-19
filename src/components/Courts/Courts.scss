@@ -11,7 +11,7 @@
     max-height: 40vh;
     overflow-y: auto;
     &--second {
-      margin-top: 0;
+      margin-top: 2rem;
       padding-top: 0;
     }
   }
@@ -28,9 +28,18 @@
     margin-bottom: 8px;
     background-color: $secondary-color;
     position: relative;
+    margin-top: 1rem;
+    padding: 0 1.5rem;
+
+    @include desktop {
+      padding: 0 5rem;
+    }
+    @include tablet {
+      padding: 0 3rem;
+    }
 
     &:hover {
-      background-color: $accent-color;
+      background-color: white;
     }
 
     &-header {
@@ -41,10 +50,11 @@
     }
   }
   &__info {
-    width: 25vw;
-    text-align: center;
+    // width: 25vw;
+    text-align: left;
     font-size: 0.85rem;
     color: black;
+    padding: 0 1rem;
 
     @include tablet {
       font-size: 1rem;
@@ -53,5 +63,53 @@
     @include desktop {
       font-size: 1.35rem;
     }
+
+    &--name {
+      font-size: 1rem;
+      margin-bottom: -0.35rem;
+
+      @include desktop {
+        font-size: 1.5rem;
+      }
+    }
+    &--address {
+      color: $primary-color;
+
+      @include desktop {
+        font-size: 1.15rem;
+      }
+    }
+
+    &-wrapper-1 {
+      flex-grow: 4;
+    }
+  }
+}
+
+$easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+.open {
+  text-align: center;
+  color: green;
+  text-shadow: 0 0 20px green;
+
+  @include tablet {
+    font-size: 1.2rem;
+    margin-right: 2rem;
+  }
+  @include desktop {
+    font-size: 1.5rem;
+  }
+}
+.closed {
+  text-align: center;
+  color: red;
+  text-shadow: 0 0 20px red;
+  @include tablet {
+    font-size: 1.2rem;
+    margin-right: 2rem;
+  }
+  @include desktop {
+    font-size: 1.5rem;
   }
 }
