@@ -3,6 +3,8 @@ import axios from "axios";
 import Loading from "../Loading/Loading";
 import { useEffect, useState } from "react";
 
+import SubButton from "../SubButton/SubButton";
+
 const baseURL = import.meta.env.VITE_API_URL;
 
 function ScoreTracker({ userID, onGameSubmission }) {
