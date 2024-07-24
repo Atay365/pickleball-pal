@@ -17,7 +17,7 @@ function Home() {
           />
           <div className="hero__content">
             <h1 className="hero__cta">
-              Track Your Wins, Find New Courts, and Connect with Players Near
+              Track Your Games, Find New Courts, and Connect with Players Near
               You!
             </h1>
             <Link to={"/signup"}>
