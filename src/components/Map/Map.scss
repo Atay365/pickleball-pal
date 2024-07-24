@@ -4,9 +4,12 @@
 .court-map {
   border-radius: 20px;
   width: 75%;
-  height: 40vh;
+  height: 60vh;
   margin-top: 3.5rem;
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__container {
     display: flex;
