@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.6",
+    "antd": "^5.19.3",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
     "gsap": "^3.12.5",

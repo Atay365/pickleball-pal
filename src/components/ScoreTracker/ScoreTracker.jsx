@@ -2,13 +2,14 @@ import "./ScoreTracker.scss";
 import axios from "axios";
 import Loading from "../Loading/Loading";
 import { useEffect, useState } from "react";
+import { notification } from "antd";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
 function ScoreTracker({ userID, onGameSubmission }) {
   const [score, setScore] = useState({ user: 0, opponent: 0 });
   const [opponentName, setOpponentName] = useState("");
-
+  const [api, contextHolder] = notification.useNotification();
   const [userId, setUserId] = useState("");
 
   useEffect(() => {
@@ -30,12 +31,20 @@ function ScoreTracker({ userID, onGameSubmission }) {
 
   const handleSubmit = async () => {
     if (score.user < 11 && score.opponent < 11) {
-      alert(
-        "Score must be 11 for one of the players in order to submit...Keep playing!"
-      );
+      api.open({
+        message: "Keep playing!",
+        description:
+          "Score must be atleast 11 for one of the players in order to submit.",
+        duration: "3",
+      });
       return;
     } else if (!opponentName) {
-      alert("Please enter your opponents name or names for the game to submit");
+      api.open({
+        message: "Who's the Opponent",
+        description:
+          "Please enter your opponents name or names for the game to submit.",
+        duration: "3",
+      });
       return;
     }
 
@@ -64,6 +73,7 @@ function ScoreTracker({ userID, onGameSubmission }) {
 
   return (
     <>
+      {contextHolder}
       <section className="score">
         <div className="score__container">
           <h2 className="score__team-titles">You</h2>
