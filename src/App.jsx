@@ -16,15 +16,17 @@ function App() {
       <BrowserRouter>
         <div id="root">
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/courts" element={<FindCourt />} />
-            <Route path="/game" element={<Score />} />
-          </Routes>
-          <Footer />
+          <div className="site-body">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/courts" element={<FindCourt />} />
+              <Route path="/game" element={<Score />} />
+            </Routes>
+            <Footer />
+          </div>
         </div>
       </BrowserRouter>
     </>

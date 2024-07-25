@@ -20,6 +20,31 @@ function Header() {
           <h2 className="header__title">Pickleball Pal</h2>
         </Link>
       </div>
+      <nav className="desktop-nav">
+        <ul className="nav__list-desktop">
+          <li className="nav__item">
+            <Link to="/courts" className="nav__item-link">
+              Find a Court
+            </Link>
+          </li>
+          <li className="nav__item">
+            <Link to="/game" className="nav__item-link">
+              Score Keeper
+            </Link>
+          </li>
+          <li className="nav__item">
+            <Link to="/login" className="nav__item-link">
+              Login
+            </Link>
+          </li>
+          <li className="nav__item">
+            <Link to="/profile" className="nav__item-link">
+              Profile
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
       <nav className={`nav ${isActive ? "nav--active" : ""}`}>
         <ul className="nav__list">
           <li className="nav__item">
