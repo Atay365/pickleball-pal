@@ -9,19 +9,21 @@ function Home() {
   return (
     <>
       <main>
-        <div className="hero-wrap">
+        <div className="relative h-1/3 overflow-hidden md:h-2/5 xl:h-screen ">
           <img
             src={heroImg}
             alt="Pickleball Net and Court"
-            className="hero__bg"
+            className="absolute inset-0 w-full h-auto md:h-screen xl:h-screen"
           />
-          <div className="hero__content">
-            <h1 className="hero__cta">
+          <div className="relative text-right mr-2 pt-24">
+            <h1 className="text-white text-xs md:text-md xl:text-lg ">
               Track Your Wins, Find New Courts, and Connect with Players Near
               You!
             </h1>
             <Link to={"/signup"}>
-              <button className="hero__button">Join Today</button>
+              <button className="bg-white border-none rounded h-1 cursor-pointer text-black md:h-12 md:text-base md:w-40">
+                Join Today
+              </button>
             </Link>
           </div>
         </div>

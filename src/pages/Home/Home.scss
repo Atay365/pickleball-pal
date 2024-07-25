@@ -14,58 +14,58 @@
 }
 
 .hero {
-  &__bg {
-    opacity: 0.4;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
+  // &__bg {
+  //   opacity: 0.4;
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   width: 100%;
+  //   height: auto;
 
-    @include tablet {
-      height: 100%;
-    }
-    @include desktop {
-      height: 100%;
-    }
-  }
-  &__content {
-    position: relative;
-    text-align: right;
-    margin-right: 2rem;
-    padding-top: 6rem;
-    @include desktop {
-    }
-  }
-  &__cta {
-    color: white;
-    font-size: 1.5rem;
+  //   @include tablet {
+  //     height: 100%;
+  //   }
+  //   @include desktop {
+  //     height: 100%;
+  //   }
+  // }
+  // &__content {
+  //   position: relative;
+  //   text-align: right;
+  //   margin-right: 2rem;
+  //   padding-top: 6rem;
+  //   @include desktop {
+  //   }
+  // }
+  // &__cta {
+  //   color: white;
+  //   font-size: 1.5rem;
 
-    @include tablet {
-      font-size: 2.5rem;
-    }
-    @include desktop {
-      width: 75vw;
-      font-size: 3.2rem;
-    }
-  }
-  &__desc {
-    color: white;
-  }
-  &__button {
-    background-color: white;
-    border: 0px;
-    border-radius: 4px;
-    height: 2rem;
-    cursor: pointer;
-    color: black;
+  //   @include tablet {
+  //     font-size: 2.5rem;
+  //   }
+  //   @include desktop {
+  //     width: 75vw;
+  //     font-size: 3.2rem;
+  //   }
+  // }
+  // &__desc {
+  //   color: white;
+  // }
+  // &__button {
+  //   background-color: white;
+  //   border: 0px;
+  //   border-radius: 4px;
+  //   height: 2rem;
+  //   cursor: pointer;
+  //   color: black;
 
-    @include tablet {
-      height: 3rem;
-      width: 10rem;
-      font-size: 1rem;
-    }
-  }
+  //   @include tablet {
+  //     height: 3rem;
+  //     width: 10rem;
+  //     font-size: 1rem;
+  //   }
+  // }
 
   &-wrap {
     @include desktop {
