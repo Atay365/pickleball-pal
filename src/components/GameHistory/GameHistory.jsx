@@ -5,11 +5,11 @@ function GameHistory({ gameHistory }) {
     <>
       <section className="courts">
         <ul className="courts__list">
-          <li className="courts__item courts__item-header">
-            <p className="courts__info">Date</p>
-            <p className="courts__info">Opponent</p>
-            <p className="courts__info">Score</p>
-            <p className="courts__info">W/L</p>
+          <li className="courts__item-1 courts__item-header-1">
+            <p className="courts__info-1">Date</p>
+            <p className="courts__info-1">Opponent</p>
+            <p className="courts__info-1">Score</p>
+            <p className="courts__info-1">W/L</p>
           </li>
           {gameHistory.map((game) => {
             const formattedDate = new Date(game.date).toLocaleDateString(
@@ -17,11 +17,11 @@ function GameHistory({ gameHistory }) {
               { month: "2-digit", day: "2-digit", year: "numeric" }
             );
             return (
-              <li className="courts__item" key={game.id}>
-                <p className="courts__info">{formattedDate}</p>
-                <p className="courts__info">{game.opponent}</p>
-                <p className="courts__info">{game.score}</p>
-                <p className="courts__info">{!game.win ? "Loss" : "Win"}</p>
+              <li className="courts__item-1" key={game.id}>
+                <p className="courts__info-1">{formattedDate}</p>
+                <p className="courts__info-1">{game.opponent}</p>
+                <p className="courts__info-1">{game.score}</p>
+                <p className="courts__info-1">{!game.win ? "Loss" : "Win"}</p>
               </li>
             );
           })}

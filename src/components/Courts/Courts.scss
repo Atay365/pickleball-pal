@@ -6,12 +6,14 @@
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  width: 100%;
   &__list {
     padding: 1rem;
     margin-bottom: 0;
     margin-top: 4vh;
     max-height: 40vh;
     overflow-y: auto;
+    width: 100%;
 
     &--second {
       margin-top: 1rem;
@@ -54,6 +56,41 @@
     }
 
     &-header {
+      color: $highlight-color;
+      text-decoration: underline;
+      text-decoration-color: black;
+      position: relative;
+    }
+  }
+  &__item-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 4px 11px -5px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    list-style: none;
+    color: $primary-color;
+    margin-bottom: 8px;
+    background-color: $secondary-color;
+    position: relative;
+    margin-top: 1rem;
+    padding: 0 1.5rem;
+
+    @include desktop {
+      justify-content: space-around;
+      padding: 0 5rem;
+    }
+    @include tablet {
+      justify-content: space-around;
+      padding: 0 3rem;
+    }
+
+    &:hover {
+      background-color: white;
+    }
+
+    &-header-1 {
       color: $highlight-color;
       text-decoration: underline;
       text-decoration-color: black;
@@ -122,5 +159,23 @@ $easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
   @include desktop {
     font-size: 1.5rem;
+  }
+}
+
+.courts__info-1 {
+  // width: 25vw;
+  text-align: left;
+  font-size: 0.85rem;
+  color: black;
+  padding: 0 1rem;
+  width: 25%;
+  text-align: center;
+
+  @include tablet {
+    font-size: 1rem;
+  }
+
+  @include desktop {
+    font-size: 1.35rem;
   }
 }
